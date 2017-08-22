@@ -51,6 +51,7 @@ class Gallery extends Component {
       <div>
         <FilterPane
           {...this.state}
+          resultCount={this.state.filteredPictures.length}
           handleFilterChange={this.handleFilterChange}
         />
         <PagerSet page={page} renderPage={this.renderPage} />
