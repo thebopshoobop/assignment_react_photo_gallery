@@ -1,9 +1,9 @@
-import React from "react";
-import Photo from "./Photo";
+import React from 'react';
+import Photo from './Photo';
 
 const GalleryPane = ({ pictures }) =>
-  <div className="row">
-    {pictures.map(picture => <Photo src={picture} key={picture} />)}
-  </div>;
+	<div className="row">
+		{pictures.map(picture => <Photo {...picture} key={picture.src} />)}
+	</div>;
 
 export default GalleryPane;
