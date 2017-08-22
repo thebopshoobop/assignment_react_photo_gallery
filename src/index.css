@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Cormorant+Infant|Lobster+Two|Poiret+One');
 body {
-	color: #337ab7;
-	background: url('/bg.png');
-	background-position: center;
-	background-size: auto auto;
-	font-family: 'Cormarant Infant';
-	font-size: 2rem;
-	padding-top: 2em;
+  color: #337ab7;
+  background: url('/bg.png');
+  background-position: center;
+  background-size: auto auto;
+  font-family: 'Cormarant Infant';
+  font-size: 2rem;
+  padding-top: 2em;
 }
 
 h1,
@@ -15,5 +15,9 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Lobster Two';
+  font-family: 'Lobster Two';
+}
+
+.row > div {
+  margin-bottom: 1rem;
 }
