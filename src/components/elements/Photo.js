@@ -33,10 +33,9 @@ class Photo extends Component {
 	};
 
 	componentDidMount() {
-		setTimeout(
-			() => this.photoElement.classList.remove('move-left'),
-			Math.floor(Math.random() * 500)
-		);
+		setTimeout(() => {
+			if (this.photoElement) this.photoElement.classList.remove('move-left');
+		}, Math.floor(Math.random() * 500));
 	}
 
 	render() {
