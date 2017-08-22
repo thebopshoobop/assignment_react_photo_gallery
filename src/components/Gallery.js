@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GalleryPane from './elements/GalleryPane';
-import FilterPane from './elements/FilterPane';
+import RefinePane from './elements/RefinePane';
 import PagerSet from './elements/PagerSet';
 const photos = require('../helpers').photos();
 
@@ -54,7 +54,7 @@ class Gallery extends Component {
 		const page = this.state.currentPage;
 		return (
 			<div>
-				<FilterPane
+				<RefinePane
 					{...this.state}
 					resultCount={this.state.filteredPictures.length}
 					handleFilterChange={this.handleFilterChange}
