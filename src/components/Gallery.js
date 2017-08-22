@@ -1,41 +1,44 @@
-import React, { Component } from "react";
-import GalleryPane from "./elements/GalleryPane";
-import photos from "../photos";
-
-const MAX_CAPTION_LENGTH = 100;
-let filters = {};
-const pictures = photos.data.map(photo => {
-  filters[photo.filter] = photo.filter;
-  return {
-    filter: photo.filter,
-    user: photo.user,
-    link: photo.link,
-    src: photo.images.low_resolution.url,
-    caption: ellipsis(photo.caption),
-    commentCount: photo.comments.count,
-    likeCount: photo.likes.count,
-    createdAt: new Date(photo.created_time * 1000).toDateString()
-  };
-});
-
-function ellipsis(str) {
-  if (!str) return "";
-  if (typeof str === "object") {
-    str = str.text;
-    if (str && str.length < MAX_CAPTION_LENGTH) return str;
-    return str.slice(0, MAX_CAPTION_LENGTH).concat("...");
-  }
-}
+import React, { Component } from 'react';
+import GalleryPane from './elements/GalleryPane';
+import FilterPane from './elements/FilterPane';
+const photos = require('../helpers').photos();
 
 class Gallery extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}; // Redundant right now
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			pictures: photos.pictures,
+			filteredPictures: photos.pictures,
+			filters: photos.filters,
+			selected: 'None'
+		};
+	}
 
-  render() {
-    return <GalleryPane pictures={pictures} />;
-  }
+	handleFilterChange = e => {
+		const filteredPictures =
+			e.target.value === 'None'
+				? this.state.pictures
+				: this.state.pictures.filter(
+						picture => picture.filter === e.target.value
+					);
+		// Set the new state.
+		this.setState({
+			selected: e.target.value,
+			filteredPictures
+		});
+	};
+
+	render() {
+		return (
+			<div>
+				<FilterPane
+					{...this.state}
+					handleFilterChange={this.handleFilterChange}
+				/>
+				<GalleryPane {...this.state} />
+			</div>
+		);
+	}
 }
 
 export default Gallery;

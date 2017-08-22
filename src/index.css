@@ -28,3 +28,7 @@ h6 {
 .caption h4 {
 	color: #337ab7;
 }
+
+.slide-test {
+	transform: translate(1920px, 0);
+}

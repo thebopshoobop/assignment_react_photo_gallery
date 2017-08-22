@@ -31,7 +31,7 @@ const Photo = ({
 	likeCount,
 	createdAt
 }) =>
-	<div className="col-sm-4 col-md-3 col-lg-2">
+	<div className="col-sm-4 col-md-3 col-lg-2 slide">
 		<OverlayTrigger
 			trigger={['hover', 'focus']}
 			placement="top"

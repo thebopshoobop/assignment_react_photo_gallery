@@ -1,0 +1,12 @@
+.slide {
+	transition: transform 1s;
+	transition-timing-function: ease;
+}
+
+.move-left {
+	transform: translate(-1920px, 0px);
+}
+
+.move-right {
+	transform: translate(1920px, 0px);
+}
