@@ -12,11 +12,7 @@ const RefinePane = ({ filters, selected, handlers, resultCount }) =>
     <Form inline>
       <FormGroup className="col-sm-4" controlId="filterSelect">
         <ControlLabel>Search&nbsp;&nbsp;</ControlLabel>
-        <FormControl
-          type="text"
-          placeholder={selected}
-          onChange={handlers.search}
-        />
+        <FormControl type="text" onChange={handlers.search} />
       </FormGroup>
       <FormGroup className="col-sm-4" controlId="filterSelect">
         <ControlLabel>Sort&nbsp;&nbsp;</ControlLabel>
